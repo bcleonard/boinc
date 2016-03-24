@@ -14,7 +14,7 @@ It will also need to be owned or read/writable by the user/group root as the boi
 for the instructions below.  Just make sure you create it prior to starting the container.
 ### Running:
 ```sh
-docker run -v -n data -h HOSTNAME /data/boinc:/var/lib/boinc:Z -n boinc bcleonard/boinc 
+docker run -v -n boinc -h HOSTNAME /data/boinc:/var/lib/boinc:Z -n boinc bcleonard/boinc 
 ```
 Please see the Notes/Caveats/Issues below for more information.
 ### Configuration:
