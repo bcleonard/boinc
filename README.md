@@ -34,7 +34,7 @@ Running the above command without any boinccmd arguements will show you what arg
 docker exec boinc boinccmd --get_state
 ```
 ### Notes/Caveats/Issues:
-1.&nbsp;&nbsp-h HOSTNAME - I recommend that you use this option (choose your own hostname) so that your host id for boinc is not the container id.
+1.	-h HOSTNAME - I recommend that you use this option (choose your own hostname) so that your host id for boinc is not the container id.
 2.	I have installed the 32 bit binaries so that projects such as climateprediction will run.  However, for some reason, the boinc_client doesn't see them, so 32 bit projects won't run.  The same libraries work outside of a container, so I'm not sure whats going on.  Its low on my list, but if somebody can point me in the right direction, I'd be grateful.
 3.	No GUI password.  By default, I set a blank password.  You can change this by prepopulating /data/boinc/gui_rpc_auth.cfg.  If somebody asks, I update the script to generate a randon password on initial startup.
 4.	After starting, I had to manually tell the client to start downloading work.  I'm not sure why I had to do that, but I waited almost 8 hours and it still hadn't downloaded any work.  After doing that, the work downloaded and it started doing work.
