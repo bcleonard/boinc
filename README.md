@@ -14,7 +14,7 @@ It will also need to be owned by root as the boinc_client runs as root in the co
 for the instructions below.  Just make sure you create it prior to starting the container.
 ### Running:
 ```sh
-docker run -v -n data -h HOSTNAME /data/boinc:/var/lib/boinc -n boinc bcleonard/boinc 
+docker run -v -n data -h HOSTNAME /data/boinc:/var/lib/boinc:Z -n boinc bcleonard/boinc 
 ```
 ### Configuration:
 As I said before, /data/boinc will hold all of your project data.  You can prepopulate any files you need or let the client initialize it for you.
@@ -33,8 +33,8 @@ Running the above command without any boinccmd arguements will show you what arg
 docker exec boinc boinccmd --get_state
 ```
 ### Notes/Caveats/Issues:
-1)	-h HOSTNAME - I recommend that you use this option (choose your own name please) so that your host id for boinc is not the container id
-2)	I have installed the 32 bit binaries so that projects such as climateprediction will run.  However, for some reason, the boinc_client doesn't see them, so 32 bit projects won't run.  The same libraries work outside of a container, so I'm not sure whats going on.  Its low on my list, but if somebody can point me in the right direction, I'd be grateful.
-3)	No GUI password.  By default, I set a blank password.  You can change this by prepopulating /data/boinc/gui_rpc_auth.cfg
-4)	After starting, I had to manually tell the client to start downloading work.  I'm not sure why I had to do that, but I waitned almost 8 hours and it still hadn't downloaded any work.  After doing that, the work downloaded and it started doing work.
+1.	-h HOSTNAME - I recommend that you use this option (choose your own name please) so that your host id for boinc is not the container id
+2.	I have installed the 32 bit binaries so that projects such as climateprediction will run.  However, for some reason, the boinc_client doesn't see them, so 32 bit projects won't run.  The same libraries work outside of a container, so I'm not sure whats going on.  Its low on my list, but if somebody can point me in the right direction, I'd be grateful.
+3.	No GUI password.  By default, I set a blank password.  You can change this by prepopulating /data/boinc/gui_rpc_auth.cfg
+4.	After starting, I had to manually tell the client to start downloading work.  I'm not sure why I had to do that, but I waitned almost 8 hours and it still hadn't downloaded any work.  After doing that, the work downloaded and it started doing work.
 
