@@ -1,11 +1,11 @@
-FROM fedora:23
+FROM fedora:25
 MAINTAINER Bradley Leonard <bradley@stygianresearch.com> 
 
 # install boinc
 RUN dnf -y install compat-libstdc++-296.i686 compat-libstdc++-33.i686 boinc-client\
   && dnf clean all
 
-EXPOSE 80 443 31416
+EXPOSE 31416
 
 WORKDIR /var/lib/boinc
 
