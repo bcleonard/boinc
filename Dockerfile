@@ -11,18 +11,18 @@ RUN apt-get update &&                           \
 
 EXPOSE 31416
 
-WORKDIR /var/lib/boinc
+#WORKDIR /var/lib/boinc
 
 #USER boinc
 
-ENTRYPOINT ["boinc"]
+#ENTRYPOINT ["boinc"]
 
 # create directories
-#RUN mkdir /scripts
+RUN mkdir /scripts
 
 # add the startup.sh
-#ADD startup.sh /scripts/startup.sh
-#RUN chmod 755 /scripts/startup.sh
+ADD startup.sh /scripts/startup.sh
+RUN chmod 755 /scripts/startup.sh
 
-#CMD ["/scripts/startup.sh"]
+CMD ["/scripts/startup.sh"]
 #CMD ["/bin/bash"]

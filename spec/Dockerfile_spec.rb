@@ -11,7 +11,7 @@ describe "Dockerfile" do
     it { should have_expose '31416' }
     it { should have_user 'boinc' }
     it { should have_workdir '/var/lib/boinc' }
-    it { should have_entrypoint 'boinc'}
+    it { should have_cmd "/scripts/startup.sh"}
 
     describe docker_run('boinc', family: :debian) do
       describe 'boinc-client' do
