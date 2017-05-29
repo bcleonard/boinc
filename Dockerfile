@@ -13,7 +13,7 @@ EXPOSE 31416
 
 WORKDIR /var/lib/boinc
 
-USER boinc
+#USER boinc
 
 ENTRYPOINT ["boinc"]
 
@@ -25,3 +25,4 @@ ENTRYPOINT ["boinc"]
 #RUN chmod 755 /scripts/startup.sh
 
 #CMD ["/scripts/startup.sh"]
+#CMD ["/bin/bash"]
