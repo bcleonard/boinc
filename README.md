@@ -14,7 +14,7 @@ It will also need to be owned or read/writable by the user/group root as the boi
 for the instructions below.  Just make sure you create it prior to starting the container.
 ### Running:
 ```sh
-docker run --name=boinc -h HOSTNAME -p 31416 -v /data/boinc:/var/lib/boinc bcleonard/boinc 
+docker run --name=boinc -h HOSTNAME -p 31416 -v /data/boinc:/var/lib/boinc-client bcleonard/boinc 
 ```
 Please see the Notes/Caveats/Issues below for more information.
 ### Configuration:
@@ -24,6 +24,11 @@ You will need to configure the boinc_client before it can do any actual work.  I
 docker exec boinc boinccmd --join_acct_mgr URL name passwd
 ```
 which will attach the client to an account manager.  This should initialize the client so it starts doing work.
+
+For example, to link the container to boincstats:
+```sh
+docker exec boinc boinccmd --join_acct_mgr http://bam.boincstats.com <username> <password>
+```
 ### Additional Configuration:
 Since docker now has the exec command, you can now run commands inside the container.  For this container, you can run the boinccmd and use it to configure the boinc_client.  The following syntax works:
 ```sh
