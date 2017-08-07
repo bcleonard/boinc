@@ -1,13 +1,12 @@
-FROM debian:jessie
+FROM fedora:26
 LABEL MAINTAINER Bradley Leonard <bradley@stygianresearch.com>
 LABEL description="This container will run the boinc-client."
 
 # install boinc
-RUN apt-get update &&                           \
-    apt-get -q install -y boinc-client &&       \
-    apt-get clean &&                            \
-    rm -rf /var/lib/apt/lists/*
-
+RUN dnf -y update && \
+    dnf -y install compat-libstdc++-296.i686 compat-libstdc++-33.i686 compat-libstdc++-33.x86_64 && \
+    dnf -y install boinc-client && \
+    dnf clean all
 
 EXPOSE 31416
 
