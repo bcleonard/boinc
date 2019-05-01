@@ -27,7 +27,8 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "fedora/25-cloud-base"
+  config.vm.box = "fedora/29-cloud-base"
+  config.vm.box_version = "29.20181024.1"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -125,7 +126,7 @@ Vagrant.configure("2") do |config|
     systemctl start docker
   SHELL
   config.vm.provision "shell", inline:  <<-DOCKERRAIC
-    echo "installing docker_raic:"A
+    echo "installing docker_raic:"
     if [ ! -f /usr/local/bin/docker_raic ]
     then
       cp /vagrant/bin/docker_raic /usr/local/bin/docker_raic
