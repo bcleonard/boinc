@@ -1,4 +1,4 @@
-FROM fedora:31
+FROM fedora:30
 LABEL MAINTAINER Bradley Leonard <bradley@stygianresearch.com>
 LABEL description="This container will run the boinc-client."
 
