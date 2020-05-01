@@ -1,6 +1,6 @@
-#I'm no longer going to be maintaining this project. After receiving your issue, I'm been doing some planned upgrades & maintenance. As a result, I've switched to the official BOINC docker client.
+# I'm no longer going to be maintaining this project. After receiving your issue, I'm been doing some planned upgrades & maintenance. As a result, I've switched to the official BOINC docker client.
 
-#This didn't exist when I first created this project. After playing with it for the past couple of days, I've moved all my boinc processing to it.
+# This didn't exist when I first created this project. After playing with it for the past couple of days, I've moved all my boinc processing to it.
 
 https://hub.docker.com/r/boinc/client
 
